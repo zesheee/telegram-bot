@@ -19,7 +19,7 @@ def send_text(message):
     elif message.text.lower() == 'я тебя люблю':
         bot.send_sticker(message.chat.id, 'CAADAgADZgkAAnlc4gmfCor5YbYYRAI')
     else:
-        bot.send_message(message.chat.id, 'Что?')
+        bot.send_message(message.chat.id, 'А?')
 
 @bot.message_handler(content_types=['sticker'])
 def sticker_id(message):
