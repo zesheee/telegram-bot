@@ -6,9 +6,6 @@ bot = telebot.TeleBot(config.token)
 keyboard1 = telebot.types.ReplyKeyboardMarkup(True, True)
 keyboard1.row('Привет', 'Пока')
 
-keyboard2 = telebot.types.ReplyKeyboardMarkup(True, True)
-keyboard2.row('Привет', 'Пока')
-
 @bot.message_handler(commands=['start'])
 def start_message(message):
     bot.send_message(message.chat.id, 'Привет, ты написал мне /start', reply_markup=keyboard1)
