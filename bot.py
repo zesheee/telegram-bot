@@ -2,8 +2,11 @@ import telebot
 
 bot = telebot.TeleBot('1211934242:AAFFjghziMXg5boRkr8RrYIizJZRilQ6awA')
 
-keyboard1 = telebot.types.ReplyKeyboardMarkup()
+keyboard1 = telebot.types.ReplyKeyboardMarkup(True, True)
 keyboard1.row('Привет', 'Пока')
+
+keyboard2 = telebot.types.ReplyKeyboardMarkup(True, True)
+keyboard2.row('Привет', 'Пока')
 
 @bot.message_handler(commands=['start'])
 def start_message(message):
@@ -17,6 +20,8 @@ def send_text(message):
         bot.send_message(message.chat.id, 'Прощай, создатель')
     elif message.text.lower() == 'я тебя люблю':
         bot.send_sticker(message.chat.id, 'CAADAgADZgkAAnlc4gmfCor5YbYYRAI')
+    else:
+        bot.send_message(message.chat.id, 'Что?')
 
 @bot.message_handler(content_types=['sticker'])
 def sticker_id(message):
