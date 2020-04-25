@@ -1,6 +1,6 @@
 import telebot
 from telebot import types
-from mongodb import mdb
+#from mongodb import mdb
 
 import config
 
